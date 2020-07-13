@@ -25,4 +25,8 @@ do
   aws s3 cp "s3://${S3_BUCKET}/${plugin_latest}" "${PLUGIN_DIR}" --quiet; echo $?
 done
 
+aws s3 cp "s3://${S3_BUCKET}/temp/temp_pa_supervisor.zip" "${PLUGIN_DIR}" --quiet; echo $?
+cp -v "$PLUGIN_DIR/temp_pa_supervisor.zip" "$PLUGIN_DIR/opendistro_performance_analyzer-1.9.0.1.zip"
+
+
 ls -ltr $PLUGIN_DIR
